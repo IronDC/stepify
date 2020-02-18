@@ -5,7 +5,7 @@ const userSchema = new Schema({
   username: String,
   password: String,
   // gameSessionsId: Array <---- NO LO TENEMOS CLARO
-},{
+}, {
   timestamps: true
 });
 

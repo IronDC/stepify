@@ -1,4 +1,4 @@
-const express        = require("express");
+const express = require("express");
 const passportRouter = express.Router();
 const User = require("../models/user");
 const { hashPassword, checkHashed } = require("../lib/hashing");
@@ -6,23 +6,23 @@ const passport = require("passport");
 const ensureLogin = require("connect-ensure-login");
 
 // Require user model
-passportRouter.get("/signup", (req,res,next) => {
+passportRouter.get("/signup", (req, res, next) => {
   res.render("passport/signup");
 })
 
-passportRouter.post("/signup", async (req,res,next) => {
+passportRouter.post("/signup", async (req, res, next) => {
   const { username, password } = req.body;
   const existUser = await User.findOne({ username });
-  if(!existUser){
-    const NewUser = await User.create({ username, password:hashPassword(password) });
+  if (!existUser) {
+    const NewUser = await User.create({ username, password: hashPassword(password) });
     console.log("User Created");
     res.redirect("/");
-  }else {
+  } else {
     res.render("/signup");
   }
-  
+
 })
-passportRouter.get("/login", (req,res,next) => {
+passportRouter.get("/login", (req, res, next) => {
   res.render("passport/login");
 })
 
