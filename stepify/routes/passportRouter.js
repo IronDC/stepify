@@ -28,7 +28,7 @@ passportRouter.get("/login", (req, res, next) => {
 
 passportRouter.post(
   "/login",
-  passport.authenticate("local", { successRedirect: "/", failureRedirect: "/signup" })
+  passport.authenticate("local", { successRedirect: "/start", failureRedirect: "/signup" })
 );
 
 passportRouter.get("/logout", async (req, res, next) => {
@@ -36,8 +36,8 @@ passportRouter.get("/logout", async (req, res, next) => {
   res.redirect("/login");
 });
 
-passportRouter.get("/private-page", ensureLogin.ensureLoggedIn(), (req, res) => {
-  res.render("passport/private", { user: req.user });
-});
+// passportRouter.get("/start", ensureLogin.ensureLoggedIn(), (req, res) => {
+//   res.render("start", { user: req.user });
+// });
 
 module.exports = passportRouter;
