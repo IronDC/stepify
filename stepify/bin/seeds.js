@@ -11,13 +11,13 @@ withDbConnection(async () => {
       idSpotify: "0uq5PttqEjj3IH1bzwcrXF",
       name: "Spice Girls",
       image: "https://i.scdn.co/image/c6f6b80a3f338b7577a6daa6e27cb0c3f621bb02",
-      enum: "initial"
+      userType: "initial"
     },
     {
       idSpotify: "1yxSLGMDHlW21z4YXirZDS",
       name: "The Black Eyed Peas",
       image: "https://i.scdn.co/image/ad2b20d12b16fcb7661dda1455be8b4f1bf0a6e8",
-      userType:"initial"
+      userType: "initial"
     },
     {
       idSpotify: "4vRSocKbGh7PsQrYRDVMEF",
