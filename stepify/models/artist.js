@@ -5,9 +5,13 @@ const artistSchema = new Schema(
   {
     idSpotify: String,
     name: String,
-    image: String
-    //enum: ["initial", "session"],
-    //default: "initial"
+    image: String,
+    userType: {
+      type: String,
+      enum: ['initial', 'session'],
+      default: 'initial'
+    },
+    
   },
   {
     timestamps: true
