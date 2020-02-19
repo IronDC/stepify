@@ -2,6 +2,8 @@ const express = require('express');
 const router = express.Router();
 const passportRouter = require("./passportRouter");
 const { spotifyApi, spotiGetArtistRelatedArtists, spotiGetArtist } = require("./../lib/spotifyApi")
+const gameRouter = require("./gameRouter");
+
 
 /* GET home page */
 router.get('/', (req, res, next) => {
@@ -29,5 +31,6 @@ router.get('/', (req, res, next) => {
 );
 
 router.use('/', passportRouter);
+router.use('/', gameRouter);
 
 module.exports = router;
