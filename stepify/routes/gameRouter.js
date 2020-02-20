@@ -6,6 +6,7 @@ const ensureLogin = require("connect-ensure-login");
 router.get("/start", ensureLogin.ensureLoggedIn(), async (req,res,next) => {
   try{
     const artist = await Artist.find();
+    console.log(`the colecction artist ${artist}`);
     return res.render("start", {artist, user: req.user});
   }catch(err){
     res.send(`Error listing artist": ${err}`)
