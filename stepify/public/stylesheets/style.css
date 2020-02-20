@@ -1,8 +1,30 @@
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; }
+  padding: 20 20 20 20;
+  font: 14px 'Montserrat', sans-serif, Arial, sans-serif;
+  background: black;
+  background: linear-gradient(180deg, black 0%, #082803 25%, #187909 75%, #0eccad 100%); }
+
+.navbar {
+  margin-bottom: 40px; }
 
 a {
   color: #00B7FF; }
+
+p {
+  font-family: 'Montserrat', sans-serif, Arial, sans-serif;
+  color: #1DB954; }
+
+p.spotiTitle {
+  font-size: 36px; }
+
+p.spotiText {
+  font-size: 30px; }
+
+p.card-title {
+  font-size: 24px;
+  padding-top: 10px; }
+
+.btn-lg {
+  margin-top: 100px; }
 
 /*# sourceMappingURL=style.css.map */

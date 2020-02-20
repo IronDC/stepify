@@ -1,8 +1,36 @@
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  padding: 20 20 20 20;
+  font: 14px 'Montserrat', sans-serif, Arial, sans-serif;
+  background: rgb(0,0,0);
+background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(8,40,3,1) 25%, rgba(24,121,9,1) 75%, rgba(14,204,173,1) 100%);
+}
+
+.navbar {
+  margin-bottom: 40px;
 }
 
 a {
   color: #00B7FF;
+}
+
+p{
+  font-family: 'Montserrat', sans-serif, Arial, sans-serif;
+  color: #1DB954;
+}
+
+p.spotiTitle{
+  font-size: 36px;
+}
+
+p.spotiText{
+  font-size: 30px;
+}
+
+p.card-title{
+  font-size: 24px;
+  padding-top: 10px;
+}
+
+.btn-lg{
+  margin-top: 100px;
 }

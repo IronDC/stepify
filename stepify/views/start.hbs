@@ -1,26 +1,29 @@
 {{#each artist}}
-<div class="container">
+<div class="container-fluid">
   <div class="row">
-    <div class="col">
-     <div class="card" style="width: 18rem;">
-  <img src="{{this.image}}" class="card-img-top" alt="{{this.image}}">
-  <div class="card-body">
-    <h5 class="card-title">{{this.name}}</h5>
-    <a href="#" class="btn btn-primary">Artista Inicial</a>
-  </div>
-</div>
+    <div class="col" align="center">
+      <div class="card" style="width: 15rem;">
+        <p class="card-title">Initial</p>
+        <img src="{{this.image}}" class="card-img-top" alt="{{this.image}}">
+        <div class="card-body">
+          <h5 class="card-title">{{this.name}}</h5>
+        </div>
+      </div>
     </div>
-    <div class="col">
-      AQUI VAN LOS ARTISTAS RELACIONADOS
+    <div class="col-6" align="center">
+      <p class="spotiTitle">HERE ARE YOUR INITIAL AND FINAL ARTIST</p>
+      <p class="spotiText">How many steps do you need?</p>
+      <button type="button" class="btn btn-outline-success btn-lg">START GAME</button>
     </div>
-    <div class="col">
-    <div class="card" style="width: 18rem;">
-  <img src="{{this.image}}" class="card-img-top" alt="{{this.image}}">
-  <div class="card-body">
-    <h5 class="card-title">{{this.name}}</h5>
-    <a href="#" class="btn btn-primary">Artista Final</a>
-  </div>
-</div>
+    <div class="col" align="center">
+      <div class="card" style="width: 15rem;">
+        <p class="card-title">Final</p>
+        <img src="{{this.image}}" class="card-img-top" alt="{{this.image}}">
+        <div class="card-body">
+          <h5 class="card-title">{{this.name}}</h5>
+          <a href="#" class="btn btn-outline-info btn-sm">Refresh</a>
+        </div>
+      </div>
     </div>
   </div>
 </div>
