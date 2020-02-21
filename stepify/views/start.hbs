@@ -1,12 +1,12 @@
-{{#each artist}}
+{{!-- {{#each initialArtist}} --}}
 <div class="container-fluid">
   <div class="row">
     <div class="col" align="center">
       <div class="card" style="width: 15rem;">
         <p class="card-title">Initial</p>
-        <img src="{{this.image}}" class="card-img-top" alt="{{this.image}}">
+        <img src="{{initialArtist.image}}" class="card-img-top" alt="{{initialArtist.image}}">
         <div class="card-body">
-          <h5 class="card-title">{{this.name}}</h5>
+          <h5 class="card-title">{{initialArtist.name}}</h5>
         </div>
       </div>
     </div>
@@ -18,13 +18,13 @@
     <div class="col" align="center">
       <div class="card" style="width: 15rem;">
         <p class="card-title">Final</p>
-        <img src="{{this.image}}" class="card-img-top" alt="{{this.image}}">
+        <img src="{{finalArtist.image}}" class="card-img-top" alt="{{finalArtist.image}}">
         <div class="card-body">
-          <h5 class="card-title">{{this.name}}</h5>
+          <h5 class="card-title">{{finalArtist.name}}</h5>
           <a href="#" class="btn btn-outline-info btn-sm">Refresh</a>
         </div>
       </div>
     </div>
   </div>
 </div>
-{{/each}}
+{{!-- {{/each}} --}}
