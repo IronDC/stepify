@@ -4,7 +4,6 @@ const passportRouter = require("./passportRouter");
 const { spotifyApi, spotiGetArtistRelatedArtists, spotiGetArtist } = require("./../lib/spotifyApi")
 const gameRouter = require("./gameRouter");
 
-
 /* GET home page */
 router.get('/', (req, res, next) => {
   // Refrescamos el access token de Spotify en cuanto un usuario llega a la Home
