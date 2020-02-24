@@ -3,6 +3,8 @@ const Gamesession = require("../models/gameSession");
 const express = require("express");
 const router = express.Router();
 const ensureLogin = require("connect-ensure-login");
+const spotifyApi = require("../lib/spotifyApi");
+//const SpotifyWebApi = require("spotify-web-api-node");
 
 router.get("/start", ensureLogin.ensureLoggedIn(), async (req, res, next) => {
   try {
@@ -101,11 +103,18 @@ router.get(
       const { initArtist, finalArtist } = req.params;
       const initialArtist = await Artist.findOne({ idSpotify: initArtist });
       // pedir los relacionados de spotify de initialArtist
+      console.log(initialArtist.idSpotify);
+      console.log("Pidiendo datos desde gameRouter GET");
+      const relatedArtistFromSpoti = await spotifyApi.spotiGetArtistRelatedArtists(
+        initialArtist.idSpotify
+      );
+      console.log(relatedArtistFromSpoti);
+
       const finArtist = await Artist.findOne({ idSpotify: finalArtist });
       return res.render("rel-page", {
         initialArtist,
         finArtist,
-        // enviar los relacionados de spotify
+        // enviar los relacionados de spotify al DOM
         user: req.user
       });
     } catch (err) {
