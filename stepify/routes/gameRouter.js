@@ -108,13 +108,13 @@ router.get(
       const relatedArtistFromSpoti = await spotifyApi.spotiGetArtistRelatedArtists(
         initialArtist.idSpotify
       );
-      console.log(relatedArtistFromSpoti);
+      console.log(relatedArtistFromSpoti.body);
 
       const finArtist = await Artist.findOne({ idSpotify: finalArtist });
       return res.render("rel-page", {
         initialArtist,
         finArtist,
-        // enviar los relacionados de spotify al DOM
+        relatedArtistFromSpoti: relatedArtistFromSpoti.body.artists,
         user: req.user
       });
     } catch (err) {

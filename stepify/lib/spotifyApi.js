@@ -14,17 +14,7 @@ const spotifyApi = new SpotifyWebApi(credentials);
 // // Devuelve artistas relacionados
 
 const spotiGetArtistRelatedArtists = spotiID => {
-  spotifyApi.getArtistRelatedArtists(spotiID).then(
-    function(data) {
-      console.log("Pidiendo datos a Spotify desde spotifyApi");
-      console.log(data.body);
-      const relatedArtist = data.body;
-      return relatedArtist;
-    },
-    function(err) {
-      console.error(err);
-    }
-  );
+  return spotifyApi.getArtistRelatedArtists(spotiID);
 };
 
 // Devuelve datos de un artista
