@@ -102,13 +102,10 @@ router.get(
     try {
       const { initArtist, finalArtist } = req.params;
       const initialArtist = await Artist.findOne({ idSpotify: initArtist });
-      // pedir los relacionados de spotify de initialArtist
-      console.log(initialArtist.idSpotify);
-      console.log("Pidiendo datos desde gameRouter GET");
+      // pedimos los relacionados de Spotify del initialArtist
       const relatedArtistFromSpoti = await spotifyApi.spotiGetArtistRelatedArtists(
         initialArtist.idSpotify
       );
-      console.log(relatedArtistFromSpoti.body);
 
       const finArtist = await Artist.findOne({ idSpotify: finalArtist });
       return res.render("rel-page", {
