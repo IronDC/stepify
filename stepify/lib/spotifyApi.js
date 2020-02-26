@@ -19,16 +19,20 @@ const spotiGetArtistRelatedArtists = spotiID => {
 
 // Devuelve datos de un artista
 
-const spotiGetArtist = () => {
-  spotifyApi.getArtist("2hazSY4Ef3aB9ATXW7F5w3").then(
-    function(data) {
-      console.log("Artist information", data.body);
-    },
-    function(err) {
-      console.error(err);
-    }
-  );
+const spotiGetArtist = artistID => {
+  return spotifyApi.getArtist(artistID);
 };
+
+// const spotiGetArtist = () => {
+//   spotifyApi.getArtist("2hazSY4Ef3aB9ATXW7F5w3").then(
+//     function(data) {
+//       console.log("Artist information", data.body);
+//     },
+//     function(err) {
+//       console.error(err);
+//     }
+//   );
+// };
 
 module.exports = {
   spotifyApi,

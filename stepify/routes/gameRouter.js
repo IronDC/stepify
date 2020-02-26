@@ -6,10 +6,14 @@ const ensureLogin = require("connect-ensure-login");
 const spotifyApi = require("../lib/spotifyApi");
 //const SpotifyWebApi = require("spotify-web-api-node");
 
+// Inicio del juego
 router.get("/start", ensureLogin.ensureLoggedIn(), async (req, res, next) => {
+  //const { id } = req.body;
+
   try {
     const artist = await Artist.find();
     const cloneArtist = [...artist];
+    //const sessionId = await Gamesession.findById(id);
     const selectRandom = array =>
       array[Math.floor(Math.random() * array.length)];
 
@@ -22,18 +26,24 @@ router.get("/start", ensureLogin.ensureLoggedIn(), async (req, res, next) => {
     }
     const finalArtist = selectRandom(cloneArtist);
 
-    return res.render("start", { initialArtist, finalArtist, user: req.user });
+    return res.render("start", {
+      initialArtist,
+      finalArtist,
+      user: req.user
+    });
   } catch (err) {
     res.send(`Error listing artist": ${err}`);
     next();
   }
 });
 
+// Post de la primera página con relacionados
 router.post(
   "/rel-page/:initArtist&:finalArtist",
   ensureLogin.ensureLoggedIn(),
   async (req, res, next) => {
     try {
+      console.log("POST DE LA PRIMERA PAGINA DE RELACIONADOS");
       const { initArtist, finalArtist } = req.params;
 
       const initialArtist = await Artist.findOne({ idSpotify: initArtist });
@@ -65,16 +75,16 @@ router.post(
         if (endArtist.idSpotify) {
           endSpoti = endArtist.idSpotify;
         }
-        if (initialArtist.name) {
+        if (endArtist.name) {
           endName = endArtist.name;
         }
         if (endArtist.image) {
           endImage = endArtist.image;
         }
       }
-      console.log(`FINAL GUARDADO ---> ${endName}, ${endSpoti}, ${initImage}`);
+      console.log(`FINAL GUARDADO ---> ${endName}, ${endSpoti}, ${endImage}`);
 
-      await Gamesession.create([
+      const newGame = await Gamesession.create([
         {
           initArtist: {
             idSpotify: initSpoti,
@@ -86,8 +96,10 @@ router.post(
         }
       ]);
 
-      console.log(`CREATE OK --- redireccionando...`);
-      return res.redirect(`/rel-page/${initArtist}&${finalArtist}`);
+      console.log(`CREATE OK CON ID ${newGame[0]._id} --- redireccionando... `);
+      return res.redirect(
+        `/rel-page/${initArtist}&${finalArtist}&${newGame[0]._id}`
+      );
     } catch (err) {
       res.send(`Error retrieving Rel Page": ${err}`);
       next();
@@ -95,12 +107,14 @@ router.post(
   }
 );
 
+// GET para cargar la primera página de relacionados
 router.get(
-  "/rel-page/:initArtist&:finalArtist",
+  "/rel-page/:initArtist&:finalArtist&:sessionId",
   ensureLogin.ensureLoggedIn(),
   async (req, res, next) => {
     try {
-      const { initArtist, finalArtist } = req.params;
+      const { initArtist, finalArtist, sessionId } = req.params;
+      console.log(`Cargando REL PAGE con ID: ${sessionId}`);
       const initialArtist = await Artist.findOne({ idSpotify: initArtist });
       // pedimos los relacionados de Spotify del initialArtist
       const relatedArtistFromSpoti = await spotifyApi.spotiGetArtistRelatedArtists(
@@ -112,10 +126,72 @@ router.get(
         initialArtist,
         finArtist,
         relatedArtistFromSpoti: relatedArtistFromSpoti.body.artists,
+        sessionId,
         user: req.user
       });
     } catch (err) {
       res.send(`Error retrieving Rel Page": ${err}`);
+      next();
+    }
+  }
+);
+
+// CARGAMOS LA PÁGINA DE PASO A PASO CON NUEVOS RELACIONADOS
+
+router.get(
+  "/steps/:relArtist&:sessionId",
+  ensureLogin.ensureLoggedIn(),
+  async (req, res, next) => {
+    try {
+      const { relArtist, sessionId } = req.params;
+      const session = await Gamesession.findById(sessionId);
+
+      console.log(`Sesion sale? ${session}`);
+      const { initArtist, endArtist } = session; // HAY QUE PASARLE EL ARTISTARRAY AL HBS
+
+      // AQUÍ ES DONDE VA EL IF/ELSE PARA CHEQUEAR QUE LE HAS DADO AL ÚLTIMO PASO Y REDIRECT A LA PAGINA FINAL
+
+      const relatedArtistFromSpoti = await spotifyApi.spotiGetArtistRelatedArtists(
+        relArtist
+      );
+
+      return res.render("steps", {
+        // HAY QUE PASARLE EL ARTISTARRAY AL HBS
+        initArtist,
+        endArtist,
+        sessionId,
+        relatedArtistFromSpoti: relatedArtistFromSpoti.body.artists,
+        user: req.user
+      });
+    } catch (err) {
+      res.send(`Error retrieving Rel Page from GET": ${err}`);
+      next();
+    }
+  }
+);
+
+// PÁGINA CON RELACIONADOS DE PASO A PASO
+
+router.post(
+  "/steps/:relArtist&:sessionId",
+  ensureLogin.ensureLoggedIn(),
+  async (req, res, next) => {
+    try {
+      const { relArtist, sessionId } = req.params;
+      const session = await Gamesession.findById(sessionId);
+
+      const savedArtist = await spotifyApi.spotiGetArtist(relArtist);
+
+      session.artistArray.push({
+        name: savedArtist.body.name,
+        idSpotify: savedArtist.body.id
+      });
+      await session.save();
+      console.log("Actualizado el array con relArtists");
+
+      return res.redirect(`/steps/${relArtist}&${sessionId}`);
+    } catch (err) {
+      res.send(`Error retrieving Rel Page from POST": ${err}`);
       next();
     }
   }

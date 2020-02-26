@@ -5,12 +5,12 @@ const sessionSchema = new Schema(
   {
     initArtist: { idSpotify: String, name: String, image: String },
     endArtist: { idSpotify: String, name: String, image: String },
-    artistArray: [{ type: Schema.Types.ObjectId, ref: "artist" }]
+    artistArray: [{ name: String, idSpotify: String, _id: false }]
   },
   {
     timestamps: true
   }
 );
 
-const Session = mongoose.model("session", sessionSchema);
-module.exports = Session;
+const gameSession = mongoose.model("gameSession", sessionSchema);
+module.exports = gameSession;
