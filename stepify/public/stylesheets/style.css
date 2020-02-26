@@ -6,14 +6,14 @@ body {
   height: 150vh; }
 
 a {
-  color: #00B7FF; }
+  color: #00b7ff; }
 
 h1 {
-  color: #1DB954; }
+  color: #1db954; }
 
 p {
-  font-family: 'Montserrat', sans-serif, Arial, sans-serif;
-  color: #1DB954; }
+  font-family: "Montserrat", sans-serif, Arial, sans-serif;
+  color: #1db954; }
 
 p.spotiTitle {
   font-size: 36px; }
@@ -27,5 +27,8 @@ p.card-title {
 
 .btn-lg {
   margin-top: 100px; }
+
+.card-title-2 {
+  font-size: 15px; }
 
 /*# sourceMappingURL=style.css.map */

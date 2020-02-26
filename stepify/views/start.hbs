@@ -13,15 +13,18 @@
     <div class="col-6" align="center">
       <p class="spotiTitle">HERE ARE YOUR INITIAL AND FINAL ARTIST</p>
       <p class="spotiText">How many steps do you need?</p>
-      <button type="button" class="btn btn-outline-success btn-lg">START GAME</button>
+      <form action="/rel-page/{{initialArtist.idSpotify}}&{{finalArtist.idSpotify}}" method="POST">
+        <button type="submit" class="btn btn-outline-success btn-lg">START
+          GAME</button>
+      </form>
     </div>
     <div class="col" align="center">
-      <div class="card" style="width: 15rem;">
+      <div class="card" style="width: 15rem;" id="refresh-pls">
         <p class="card-title">Final</p>
         <img src="{{finalArtist.image}}" class="card-img-top" alt="{{finalArtist.image}}">
         <div class="card-body">
           <h5 class="card-title">{{finalArtist.name}}</h5>
-          <a href="#" class="btn btn-outline-info btn-sm">Refresh</a>
+          <a href="#refreshpls" class="btn btn-outline-info btn-sm" id="refresh">Refresh</a>
         </div>
       </div>
     </div>
