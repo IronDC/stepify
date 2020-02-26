@@ -1,0 +1,42 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col" align="center">
+      <div class="card" style="width: 10rem;">
+        <p class="card-title-2">Initial</p>
+        <img src="{{initArtist.image}}" class="card-img-top" alt="{{initArtist.name}}">
+        <div class="card-body">
+          <h6 class="card-title">{{initArtist.name}}</h6>
+        </div>
+      </div>
+    </div>
+    <div class="col-6" align="center">
+      <p class="spotiTitle">REL STEPS</p>
+      <p class="spotiText">YOU ARE STEPING AWAI</p>
+    </div>
+    <div class="col" align="center">
+      <div class="card" style="width: 10rem;">
+        <p class="card-title-2">Final</p>
+        <img src="{{endArtist.image}}" class="card-img-top" alt="{{endArtist.name}}">
+        <div class="card-body">
+          <h6 class="card-title">{{endArtist.name}}</h6>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    {{#each relatedArtistFromSpoti}}
+    <form method="POST" action="/steps/{{this.id}}&{{../sessionId}}">
+      {{!-- <a href="/steps/{{this.id}}"> --}}
+      <div class="card" style="width: 10rem;">
+        <img src="{{this.images.2.url}}" class="card-img-top" alt="{{this.name}}">
+        <div class="card-body">
+          <h6 class="card-title">{{this.name}}</h6>
+          <button type="submit" class="btn btn-success">Elegir</button>
+        </div>
+      </div>
+      {{!-- </a> --}}
+    </form>
+    {{/each}}
+
+  </div>
+</div>
