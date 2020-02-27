@@ -11,7 +11,11 @@
     </div>
     <div class="col-6" align="center">
       <p class="spotiTitle">REL STEPS</p>
-      <p class="spotiText">YOU ARE STEPING AWAI</p>
+      {{#each artistArray}}
+        <ul class="list-group">
+          <li class="list-group-item">{{this.name}}</li>
+        </ul>  
+      {{/each}}
     </div>
     <div class="col" align="center">
       <div class="card" style="width: 10rem;">

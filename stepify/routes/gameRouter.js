@@ -170,6 +170,7 @@ router.get(
           initArtist,
           endArtist,
           sessionId,
+          artistArray,
           relatedArtistFromSpoti: relatedArtistFromSpoti.body.artists,
           user: req.user
         });
