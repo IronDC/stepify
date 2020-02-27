@@ -147,22 +147,34 @@ router.get(
       const session = await Gamesession.findById(sessionId);
 
       console.log(`Sesion sale? ${session}`);
-      const { initArtist, endArtist } = session; // HAY QUE PASARLE EL ARTISTARRAY AL HBS
+      const { initArtist, endArtist, artistArray } = session; // HAY QUE PASARLE EL ARTISTARRAY AL HBS
+      const lastArtistArray = artistArray[artistArray.length - 1];
 
-      // AQUÍ ES DONDE VA EL IF/ELSE PARA CHEQUEAR QUE LE HAS DADO AL ÚLTIMO PASO Y REDIRECT A LA PAGINA FINAL
+      if (endArtist.idSpotify === lastArtistArray.idSpotify) {
+        console.log(
+          `has terminado machote ${endArtist.idSpotify}, ${lastArtistArray.idSpotify}`);
+          return res.render("end", {
+            // HAY QUE PASARLE EL ARTISTARRAY AL HBS
+            initArtist,
+            endArtist,
+            artistArray,
+            user: req.user
+          });
+      } else {
+        const relatedArtistFromSpoti = await spotifyApi.spotiGetArtistRelatedArtists(
+          relArtist
+        );
 
-      const relatedArtistFromSpoti = await spotifyApi.spotiGetArtistRelatedArtists(
-        relArtist
-      );
+        return res.render("steps", {
+          // HAY QUE PASARLE EL ARTISTARRAY AL HBS
+          initArtist,
+          endArtist,
+          sessionId,
+          relatedArtistFromSpoti: relatedArtistFromSpoti.body.artists,
+          user: req.user
+        });
+      }
 
-      return res.render("steps", {
-        // HAY QUE PASARLE EL ARTISTARRAY AL HBS
-        initArtist,
-        endArtist,
-        sessionId,
-        relatedArtistFromSpoti: relatedArtistFromSpoti.body.artists,
-        user: req.user
-      });
     } catch (err) {
       res.send(`Error retrieving Rel Page from GET": ${err}`);
       next();

@@ -1,0 +1,30 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col" align="center">
+      <div class="card" style="width: 10rem;">
+        <p class="card-title-2">Initial</p>
+        <img src="{{initArtist.image}}" class="card-img-top" alt="{{initArtist.name}}">
+        <div class="card-body">
+          <h6 class="card-title">{{initArtist.name}}</h6>
+        </div>
+      </div>
+    </div>
+    <div class="col-6" align="center">
+      <p class="spotiTitle">CONGRATULATION THIS IS YOUR PATH:</p>
+      {{#each artistArray}}
+      <p class="spotiText">{{this.name}}</p>
+      {{/each}}
+    </div>
+    <div class="col" align="center">
+      <div class="card" style="width: 10rem;">
+        <p class="card-title-2">Final</p>
+        <img src="{{endArtist.image}}" class="card-img-top" alt="{{endArtist.name}}">
+        <div class="card-body">
+          <h6 class="card-title">{{endArtist.name}}</h6>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  </div>
+</div>
