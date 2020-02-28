@@ -68,8 +68,14 @@ p.card-title {
 
 .page-footer {
   width: 100vw;
-  margin-top: 150px;
+  margin-top: 300px;
   background: black;
   padding: 40px; }
+
+.spotiDevLogo {
+  vertical-align: baseline; }
+
+.sixDegrees {
+  margin: 0px 60px; }
 
 /*# sourceMappingURL=style.css.map */
