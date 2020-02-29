@@ -17,9 +17,9 @@
         <nav aria-label="breadcrumb">
           <ol class="breadcrumb">
             {{#each artistArray}}
-            <form method="POST" action="/steps/{{this.idSpotify}}&{{../sessionId}}"></form>
-            <li class="breadcrumb-item" aria-current="page"><a
-                href="/steps/{{this.idSpotify}}&{{../sessionId}}"> ▶️ {{this.name}}</a></li>
+            <form method="POST" action="/off/{{this.idSpotify}}&{{../sessionId}}">
+              <li class="breadcrumb-item" aria-current="page"><button type="submit"
+                  class="btn btn-link">▶️{{this.name}}</button></li>
             </form> {{/each}}
           </ol>
         </nav>
