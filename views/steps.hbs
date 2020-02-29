@@ -18,7 +18,7 @@
           <ol class="breadcrumb">
             {{#each artistArray}}
             <form method="POST" action="/off/{{this.idSpotify}}&{{../sessionId}}">
-              <li class="breadcrumb-item" aria-current="page"><button type="submit" class="btn btn-link">⇨
+              <li class="breadcrumb-item" aria-current="page"><button type="submit" class="btn btn-link button-noline">⇨
                   {{this.name}}</button></li>
             </form> {{/each}}
           </ol>
@@ -45,7 +45,7 @@
       {{#each relatedArtistFromSpoti}}
       <form method="POST" action="/steps/{{this.id}}&{{../sessionId}}">
         <div class="card d-flex justify-content-center" align="center">
-          <img class="card-img-top" src="{{this.images.2.url}}" alt="{{this.name}}" align="center">
+          <img class="card-img-top" src="{{this.images.0.url}}" alt="{{this.name}}" align="center">
           <div class="card-body">
             {{!-- <h6 class="card-title">{{this.name}}</h6> --}}
             <button type="submit" class="btn btn-outline-light">{{this.name}}</button>
