@@ -110,7 +110,8 @@ p.card-title {
 }
 
 .button-noline {
-  text-decoration-line: none;
+  text-decoration-line: none !important;
+  color: #282828;
 }
 
 .container-login {
