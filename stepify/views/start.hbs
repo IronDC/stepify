@@ -11,10 +11,10 @@
       </div>
     </div>
     <div class="col-6" align="center">
-      <p class="spotiTitle">HERE ARE YOUR INITIAL AND FINAL ARTIST</p>
+      <h1>HERE ARE YOUR INITIAL AND FINAL ARTIST</h1>
       <p class="spotiText">How many steps do you need?</p>
       <form action="/rel-page/{{initialArtist.idSpotify}}&{{finalArtist.idSpotify}}" method="POST">
-        <button type="submit" class="btn btn-outline-success btn-lg">START
+        <button type="submit" class="btn btn-outline-success btn-lg" alt="Push to start">START
           GAME</button>
       </form>
     </div>
@@ -24,7 +24,7 @@
         <img src="{{finalArtist.image}}" class="card-img-top" alt="{{finalArtist.image}}">
         <div class="card-body">
           <h5 class="card-title">{{finalArtist.name}}</h5>
-          <a href="#refreshpls" class="btn btn-outline-info btn-sm" id="refresh">Refresh</a>
+          <button type="submit" class="btn btn-outline-light btn-sm" alt="Push to start">Refresh</button>
         </div>
       </div>
     </div>

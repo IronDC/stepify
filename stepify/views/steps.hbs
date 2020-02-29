@@ -1,8 +1,8 @@
-<div class="container-fluid">
+<div class="container">
   <div class="row">
-    <div class="col" align="center">
+    <div class="col-3" align="center">
       <div class="card" style="width: 10rem;">
-        <p class="card-title-2">Initial</p>
+        <p class="card-title-2">From</p>
         <img src="{{initArtist.image}}" class="card-img-top" alt="{{initArtist.name}}">
         <div class="card-body">
           <h6 class="card-title">{{initArtist.name}}</h6>
@@ -10,16 +10,22 @@
       </div>
     </div>
     <div class="col-6" align="center">
-      <p class="spotiTitle">REL STEPS</p>
-      {{#each artistArray}}
-        <ul class="list-group">
-          <li class="list-group-item">{{this.name}}</li>
-        </ul>  
-      {{/each}}
+
+      <h3>Current path</h3>
+
+      <div class="row">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            {{#each artistArray}}
+            <li class="breadcrumb-item" aria-current="page">{{this.name}}</li>
+            {{/each}}
+          </ol>
+        </nav>
+      </div>
     </div>
-    <div class="col" align="center">
+    <div class="col-3" align="center">
       <div class="card" style="width: 10rem;">
-        <p class="card-title-2">Final</p>
+        <p class="card-title-2">To</p>
         <img src="{{endArtist.image}}" class="card-img-top" alt="{{endArtist.name}}">
         <div class="card-body">
           <h6 class="card-title">{{endArtist.name}}</h6>
@@ -27,20 +33,27 @@
       </div>
     </div>
   </div>
-  <div class="row">
-    {{#each relatedArtistFromSpoti}}
-    <form method="POST" action="/steps/{{this.id}}&{{../sessionId}}">
-      {{!-- <a href="/steps/{{this.id}}"> --}}
-      <div class="card" style="width: 10rem;">
-        <img src="{{this.images.2.url}}" class="card-img-top" alt="{{this.name}}">
-        <div class="card-body">
-          <h6 class="card-title">{{this.name}}</h6>
-          <button type="submit" class="btn btn-success">Elegir</button>
+</div>
+<div class="related-cards">
+  <div class="col-12" align="center">
+    <p>Choose your next step:</p>
+  </div>
+  <div class="row" align="center">
+    <div class="card-group" align="center">
+      {{#each relatedArtistFromSpoti}}
+      <form method="POST" action="/steps/{{this.id}}&{{../sessionId}}">
+        <div class="card d-flex justify-content-center" align="center">
+          <img class="card-img-top" src="{{this.images.2.url}}" alt="{{this.name}}" align="center">
+          <div class="card-body">
+            {{!-- <h6 class="card-title">{{this.name}}</h6> --}}
+            <button type="submit" class="btn btn-outline-light">{{this.name}}</button>
+          </div>
         </div>
-      </div>
-      {{!-- </a> --}}
-    </form>
-    {{/each}}
+      </form>
+      {{/each}}
 
+
+
+    </div>
   </div>
 </div>
