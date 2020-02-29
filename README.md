@@ -4,8 +4,7 @@ You can play our fabulous game at: https://stepifyih.herokuapp.com
 
 # Ironhack Web Dev - Module 2 Project
 
-<img src="https://avatars0.githubusercontent.com/u/54409809?s=460&v=4" alt="David" width="200" height="200">
-<img src="https://avatars1.githubusercontent.com/u/45364181?s=460&v=4" alt="Carballo" width="200" height="200">
+<img src="https://avatars0.githubusercontent.com/u/54409809?s=460&v=4" alt="David" width="200" height="200"><img src="https://avatars1.githubusercontent.com/u/45364181?s=460&v=4" alt="Carballo" width="200" height="200">
 
 # [MAD-PT DE] David García && Joan Carballo
 
@@ -25,10 +24,10 @@ Stepify uses the Spotify's API to resolve the related artist from your choosed s
 
 # Who
 
-Joan Carballo - Software Developer
-David García - Software Developer
-Diego Mendez - Ironhack TA & Assistant Developer of Stepify
-Simón G. Negrete - Ironhack TA & UX/UI Assistant of Stepify
+- Joan Carballo - Software Developer
+- David García - Software Developer
+- Diego Méndez - Ironhack TA & Assistant Developer of Stepify
+- Simón G. Negrete - Ironhack TA & UX/UI Assistant of Stepify
 
 # License
 
