@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const passportRouter = require("./passportRouter");
+const ensureLogin = require("connect-ensure-login");
 const {
   spotifyApi,
   spotiGetArtistRelatedArtists,
@@ -11,6 +12,7 @@ const gameRouter = require("./gameRouter");
 /* GET home page */
 router.get(
   "/",
+  ensureLogin.ensureLoggedIn(),
   (req, res, next) => {
     // Refrescamos el access token de Spotify en cuanto un usuario llega a la Home
     spotifyApi
@@ -27,7 +29,7 @@ router.get(
         //==================
 
         // Pintamos index DESPUÉS de haber refrescado el access token (cuando se resuelve la promesa)
-        res.render("index");
+        res.render("index", { user: req.user });
       })
       .catch(console.error);
   },
