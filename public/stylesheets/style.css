@@ -1,0 +1,89 @@
+body {
+  margin: 100px 0px 0px 0px;
+  font: 14px "Montserrat", sans-serif, Arial, sans-serif;
+  background: #282828;
+  overflow-x: hidden; }
+
+a {
+  color: #bebebe; }
+
+a:hover {
+  color: #f7f7f7; }
+
+h1 {
+  color: #1db954; }
+
+h2 {
+  color: #1db954; }
+
+h3 {
+  color: #1db954; }
+
+h4 {
+  color: #1db954; }
+
+p {
+  font-family: "Montserrat", sans-serif, Arial, sans-serif;
+  color: #1db954; }
+
+p.spotiTitle {
+  font-size: 36px;
+  color: black; }
+
+p.spotiText {
+  font-size: 30px;
+  color: white; }
+
+p.card-title {
+  font-size: 24px;
+  padding-top: 10px;
+  color: white; }
+
+.btn-lg {
+  margin-top: 100px; }
+
+.card-title-2 {
+  font-size: 15px;
+  color: white; }
+
+.list-group-item {
+  width: 20%; }
+
+.card {
+  width: 150px !important;
+  min-height: 220px !important;
+  margin: 10px 10px 10px 10px;
+  padding: 5px 5px 5px 5px;
+  background: #58b660; }
+
+.card-group {
+  display: flex;
+  justify-content: center; }
+
+.card-img-top {
+  margin-top: 20px;
+  width: 100px;
+  height: 100px; }
+
+.related-cards {
+  margin: auto 0; }
+
+.page-footer {
+  margin-top: 300px;
+  background: black;
+  padding: 40px; }
+
+.spotiDevLogo {
+  vertical-align: baseline; }
+
+.sixDegrees {
+  margin: 40px 60px; }
+
+.pathArtists {
+  color: whitesmoke;
+  font-size: 18px; }
+
+.endImg {
+  margin: 15px; }
+
+/*# sourceMappingURL=style.css.map */
