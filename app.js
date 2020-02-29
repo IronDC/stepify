@@ -13,7 +13,7 @@ const MongoStore = require("connect-mongo")(session);
 const flash = require("flash");
 
 mongoose
-  .connect(DBURL, {
+  .connect(process.env.DBURL, {
     useNewUrlParser: true,
     useUnifiedTopology: true
   })
