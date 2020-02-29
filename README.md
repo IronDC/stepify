@@ -1,9 +1,39 @@
-# stepify
+# Stepify
 
-# Ironhack Module 2 Project - Stepify 
+You can play our fabulous game at: https://stepifyih.herokuapp.com
 
-<img src="https://avatars1.githubusercontent.com/u/45364181?s=460&v=4" alt="Carballo" width="200" height="200"> <img src="https://avatars0.githubusercontent.com/u/54409809?s=460&v=4" alt="David" width="200" height="200"> 
+# Ironhack Web Dev - Module 2 Project
+
+<img src="https://avatars0.githubusercontent.com/u/54409809?s=460&v=4" alt="David" width="200" height="200">
+<img src="https://avatars1.githubusercontent.com/u/45364181?s=460&v=4" alt="Carballo" width="200" height="200">
 
 # [MAD-PT DE] David García && Joan Carballo
 
 <img src="https://avatars0.githubusercontent.com/u/61091442?s=400&u=0fb506823f7ef2ba3f8d61687d9776b80b9ea15c&v=4" alt="IronDC" width="200" height="200">
+
+# What is this
+
+Do you know the "Six degrees of separation" idea? It's a social theory who mantains that all people in the world are six, or fewer, social connections away from each other. ¿How many connections are between you and Donald Trump? Six or fewer. ¿How many connections are between the Spice Girls and Mozart? Stepify is a game that uses the Spotify API to address an explanations for this important question. Also for practicing web programming and for fun, but you know...
+
+# How to play
+
+Stepify gives you two music artists (initial and final), you need to choose your steps to adress the path between both.
+
+# How it works
+
+Stepify uses the Spotify's API to resolve the related artist from your choosed steps.
+
+# Who
+
+Joan Carballo - Software Developer
+David García - Software Developer
+Diego Mendez - Ironhack TA & Assistant Developer of Stepify
+Simón G. Negrete - Ironhack TA & UX/UI Assistant of Stepify
+
+# License
+
+Please refered to `LICENSE.md`
+
+# Contributing
+
+If you want to contributed to this projects, please. Are yourself to `CONTRIBUTING.md`
