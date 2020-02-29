@@ -10,9 +10,12 @@
       </div>
     </div>
     <div class="col-6" align="center">
-      <p class="spotiTitle">CONGRATULATION THIS IS YOUR PATH:</p>
+      <h1>CONGRATULATIONS!</h1>
+      <img class="endImg" src="https://pa1.narvii.com/6944/037171fb49a820725839a6903db707376758bc72r1-500-226_hq.gif">
+      <p>This is your path:</p>
+      <p class="pathArtists">{{initArtist.name}}</p>
       {{#each artistArray}}
-      <p class="spotiText">{{this.name}}</p>
+      <p class="pathArtists">{{this.name}}</p>
       {{/each}}
     </div>
     <div class="col" align="center">
@@ -26,5 +29,5 @@
     </div>
   </div>
 
-  </div>
+</div>
 </div>

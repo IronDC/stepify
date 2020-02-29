@@ -1,7 +1,8 @@
 body {
   margin: 100px 0px 0px 0px;
   font: 14px "Montserrat", sans-serif, Arial, sans-serif;
-  background: #282828; }
+  background: #282828;
+  overflow-x: hidden; }
 
 a {
   color: #bebebe; }
@@ -60,6 +61,7 @@ p.card-title {
   justify-content: center; }
 
 .card-img-top {
+  margin-top: 20px;
   width: 100px;
   height: 100px; }
 
@@ -67,7 +69,6 @@ p.card-title {
   margin: auto 0; }
 
 .page-footer {
-  width: 100vw;
   margin-top: 300px;
   background: black;
   padding: 40px; }
@@ -76,6 +77,13 @@ p.card-title {
   vertical-align: baseline; }
 
 .sixDegrees {
-  margin: 0px 60px; }
+  margin: 40px 60px; }
+
+.pathArtists {
+  color: whitesmoke;
+  font-size: 18px; }
+
+.endImg {
+  margin: 15px; }
 
 /*# sourceMappingURL=style.css.map */
