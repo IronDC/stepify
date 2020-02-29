@@ -149,17 +149,18 @@ router.get(
       console.log(`Sesion sale? ${session}`);
       const { initArtist, endArtist, artistArray } = session; // HAY QUE PASARLE EL ARTISTARRAY AL HBS
       const lastArtistArray = artistArray[artistArray.length - 1];
-      
+
       if (endArtist.idSpotify === lastArtistArray.idSpotify) {
         console.log(
-          `has terminado machote ${endArtist.idSpotify}, ${lastArtistArray.idSpotify}`);
-          return res.render("end", {
-            // HAY QUE PASARLE EL ARTISTARRAY AL HBS
-            initArtist,
-            endArtist,
-            artistArray,
-            user: req.user
-          });
+          `has terminado machote ${endArtist.idSpotify}, ${lastArtistArray.idSpotify}`
+        );
+        return res.render("end", {
+          // HAY QUE PASARLE EL ARTISTARRAY AL HBS
+          initArtist,
+          endArtist,
+          artistArray,
+          user: req.user
+        });
       } else {
         const relatedArtistFromSpoti = await spotifyApi.spotiGetArtistRelatedArtists(
           relArtist
@@ -175,7 +176,6 @@ router.get(
           user: req.user
         });
       }
-
     } catch (err) {
       res.send(`Error retrieving Rel Page from GET": ${err}`);
       next();
@@ -199,6 +199,31 @@ router.post(
         name: savedArtist.body.name,
         idSpotify: savedArtist.body.id
       });
+      await session.save();
+      console.log("Actualizado el array con relArtists");
+
+      return res.redirect(`/steps/${relArtist}&${sessionId}`);
+    } catch (err) {
+      res.send(`Error retrieving Rel Page from POST": ${err}`);
+      next();
+    }
+  }
+);
+
+router.post(
+  "/off/:relArtist&:sessionId",
+  ensureLogin.ensureLoggedIn(),
+  async (req, res, next) => {
+    try {
+      const { relArtist, sessionId } = req.params;
+      const session = await Gamesession.findById(sessionId);
+
+      //const savedArtist = await spotifyApi.spotiGetArtist(relArtist);
+      let index = session.artistArray.findIndex(e => e.idSpotify === relArtist);
+
+      if (index > -1) {
+        session.artistArray.splice(index + 1, session.artistArray.length - 1);
+      }
       await session.save();
       console.log("Actualizado el array con relArtists");
 
