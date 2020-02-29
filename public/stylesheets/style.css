@@ -86,4 +86,7 @@ p.card-title {
 .endImg {
   margin: 15px; }
 
+.button-noline {
+  text-decoration-line: none; }
+
 /*# sourceMappingURL=style.css.map */
