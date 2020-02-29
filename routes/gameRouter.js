@@ -149,7 +149,7 @@ router.get(
       console.log(`Sesion sale? ${session}`);
       const { initArtist, endArtist, artistArray } = session; // HAY QUE PASARLE EL ARTISTARRAY AL HBS
       const lastArtistArray = artistArray[artistArray.length - 1];
-
+      
       if (endArtist.idSpotify === lastArtistArray.idSpotify) {
         console.log(
           `has terminado machote ${endArtist.idSpotify}, ${lastArtistArray.idSpotify}`);
