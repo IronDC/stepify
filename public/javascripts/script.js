@@ -1,5 +1,17 @@
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener(
+  "DOMContentLoaded",
+  () => {
+    console.log("Stepify");
+  },
+  false
+);
 
-  console.log('Stepify');
+// function refresh() {
+//   let e = name;
 
-}, false);
+//   axios.post("/start/refresh", e).then(changeCards());
+// }
+
+// function changeCards() {
+//   // Recibimos el objeto con el nuevo finalArtist y cambiamos la card con manipulación del DOM
+// }
