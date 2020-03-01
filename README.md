@@ -12,7 +12,7 @@ You can play our fabulous game at: https://stepifyih.herokuapp.com
 
 # What is this
 
-Stepify is a game created by David García David Garcia Linkedin David Garcia Github and Joan Carballo Joan Carballo Linkedin Joan Carballo Github for the Ironhack's Module 2 Project using Node, MongoDB, Javascript and the Spotify's API.
+Stepify is a game created by David García and Joan Carballo for the Ironhack's Module 2 Project using Node, MongoDB, Javascript and the Spotify's API.
 
 Do you know the "Six degrees of separation" idea? It's a social theory who mantains that all people in the world are six, or fewer, social connections away from each other. ¿How many connections are between you and Donald Trump? Six or fewer. ¿How many connections are between the Spice Girls and Mozart? Stepify is a game that uses the Spotify API to address an explanations for this important question. Also for practicing web programming and for fun, but you know...
 
@@ -20,21 +20,21 @@ Do you know the "Six degrees of separation" idea? It's a social theory who manta
 
 Index Page
 
-<img src="https://github.com/IronDC/stepify/blob/master/captures/home.png?raw=true" alt="IronDC" width="280">
+<img src="https://github.com/IronDC/stepify/blob/master/captures/home.png?raw=true" alt="IronDC" width="480">
 
 Start Game Page
 
-<img src="https://github.com/IronDC/stepify/blob/master/captures/start.png?raw=true" alt="IronDC" width="280">
+<img src="https://github.com/IronDC/stepify/blob/master/captures/start.png?raw=true" alt="IronDC" width="480">
 
 Step recurrent Page
 
-<img src="https://github.com/IronDC/stepify/blob/master/captures/step-1.png?raw=true" alt="IronDC" width="280">
+<img src="https://github.com/IronDC/stepify/blob/master/captures/step-1.png?raw=true" alt="IronDC" width="480">
 
 End of Game Page
 
-<img src="https://media1.giphy.com/media/ekwNfFwxGcKCSjfKf8/giphy.gif" alt="IronDC" width="280">
+<img src="https://media1.giphy.com/media/ekwNfFwxGcKCSjfKf8/giphy.gif" alt="IronDC" width="480">
 
-You can see it here after N's steps: https://stepifyih.herokuapp.com
+You can see it here after N steps: https://stepifyih.herokuapp.com
 
 # How to play
 
