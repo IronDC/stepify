@@ -20,10 +20,11 @@
     <div class="col" align="center">
       <div class="card" style="width: 15rem;" id="refresh-pls">
         <p class="card-title">Final</p>
-        <img src="{{finalArtist.image}}" class="card-img-top" alt="{{finalArtist.image}}">
+        <img src="{{finalArtist.image}}" id="finalArtist-image" class="card-img-top" alt="{{finalArtist.image}}">
         <div class="card-body">
-          <h5 class="card-title">{{finalArtist.name}}</h5>
-          <button type="submit" class="btn btn-outline-light btn-sm" alt="Push to start">Refresh</button>
+          <h5 id="finalArtist-name" class="card-title">{{finalArtist.name}}</h5>
+          <button type="submit" id="refresh-fin" onclick="change()" name="{{finalArtist}}" class=" btn btn-outline-light
+            btn-sm" alt="Push to start">Refresh</button>
         </div>
       </div>
     </div>

@@ -8,12 +8,9 @@ const spotifyApi = require("../lib/spotifyApi");
 
 // Inicio del juego
 router.get("/start", ensureLogin.ensureLoggedIn(), async (req, res, next) => {
-  //const { id } = req.body;
-
   try {
     const artist = await Artist.find();
     const cloneArtist = [...artist];
-    //const sessionId = await Gamesession.findById(id);
     const selectRandom = array =>
       array[Math.floor(Math.random() * array.length)];
 
@@ -231,6 +228,22 @@ router.post(
     } catch (err) {
       res.send(`Error retrieving Rel Page from POST": ${err}`);
       next();
+    }
+  }
+);
+
+router.post(
+  "/start/refresh",
+  ensureLogin.ensureLoggedIn(),
+  async (req, res, next) => {
+    try {
+      const artist = await Artist.find();
+      const selectRandom = array =>
+        array[Math.floor(Math.random() * array.length)];
+      let finalArtist = selectRandom(artist);
+      return res.json(finalArtist);
+    } catch (err) {
+      res.send(`Error refresh POST: ${err}`);
     }
   }
 );
