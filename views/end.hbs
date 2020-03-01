@@ -11,12 +11,14 @@
     </div>
     <div class="col-6" align="center">
       <h1>CONGRATULATIONS!</h1>
+      <h2>You needed {{artistArray.length}} steps to complete the path:</h2>
       <img class="endImg" src="https://pa1.narvii.com/6944/037171fb49a820725839a6903db707376758bc72r1-500-226_hq.gif">
       <p>This is your path:</p>
       <p class="pathArtists">{{initArtist.name}}</p>
       {{#each artistArray}}
       <p class="pathArtists">{{this.name}}</p>
       {{/each}}
+      <a href="/start" class="btn btn-outline-success" role="button">Start New Game</a>
     </div>
     <div class="col" align="center">
       <div class="card" style="width: 10rem;">
