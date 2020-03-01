@@ -1,10 +1,10 @@
-document.addEventListener(
-  "DOMContentLoaded",
-  () => {
-    console.log("Stepify");
-  },
-  false
-);
+// document.addEventListener(
+//   "DOMContentLoaded",
+//   () => {
+//     console.log("Stepify");
+//   },
+//   false
+// );
 
 // function refresh() {
 //   let e = name;
