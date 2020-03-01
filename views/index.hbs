@@ -1,17 +1,40 @@
-<div class="container-fluid">
-  <div align="center">
-    <h1>{{title}}</h1>
-    <h2>Welcome to {{title}}</h2>
-    <p>Please <a href="/signup">Signup</a> or <a href="/login">Login</a> to start the game</p>
-    <h3>How to play {{title}}</h3>
-    <img src="https://dummyimage.com/600x400/64915c/fff.jpg&text=Cambiar+esta+imagen" alt="">
+<div class="container-login">
+  <div class="photo-index"></div>
+  <div class="login">
+    <div align="center">
+      <img src="/images/stepify.png" width="200" height="200" class="d-inline-block align-top" alt="Stepify">
+      <h1>{{title}}</h1>
+      <p>Please <a class="index-link" href="/signup">Signup</a> or <a class="index-link" href="/login">Login</a> to
+        start the game</p>
+      {{!-- <button type="button" class="btn btn-outline-success">Start</button> --}}
+      <a href="/start" class="btn btn-outline-success" role="button">Start</a>
+    </div>
   </div>
 </div>
-<div class="sixDegrees">
-  <p>Do you know the <a href="https://en.wikipedia.org/wiki/Six_degrees_of_separation">"Six degrees of
-      separation"</a>
-    idea? It's a social theory who mantains that all people in the world are six, or fewer, social connections away
-    from each other. ¿How many connections are between you and Donald Trump? Six or fewer. ¿How many connections are
-    between the Spice Girls and Mozart? Stepify is a game that uses the Spotify API to address an explanations for
-    this important question. Also for practicing web programming and for fun, but you know...</p>
+
+<div class="container">
+  <div class="row index-row">
+    <div class="col-6 col-md-4">
+      <h3 style="font-size: 38px;">How to play</h3>
+    </div>
+    <div class="col-md-8 ">
+      <p>First we decide your Initial and Final artist. Then Spotify's API gives you 20 related artist of the first
+        one, you choose once and you get the 20 related artists, repeate and repeate until you reach the Final Artist
+        and complete the Path. ¿How many steps do you need?</p>
+      <img src="/images/step-1.png" height="280" class="box-shadow" alt="Stepify Step">
+    </div>
+  </div>
+  <div class="row index-row">
+    <div class="col-6 col-md-4">
+      <h3 style="font-size: 38px;">What is this?</h3>
+    </div>
+    <div class="col-md-8 ">
+      <p>Do you know the <a href="https://en.wikipedia.org/wiki/Six_degrees_of_separation">"Six degrees of
+          separation"</a>
+        idea? It's a social theory who mantains that all people in the world are six, or fewer, social connections away
+        from each other. ¿How many connections are between you and Mick Jagger? Six or fewer. ¿How many connections are
+        between the Spice Girls and Mozart? Stepify is a game that uses the Spotify API to address an explanations for
+        this important question. Also for practicing web programming and for fun, but you know...</p>
+    </div>
+  </div>
 </div>
