@@ -8,7 +8,7 @@ You can play our fabulous game at: https://stepifyih.herokuapp.com
 
 # [MAD-PT DE] David García && Joan Carballo
 
-<img src="https://avatars0.githubusercontent.com/u/61091442?s=400&u=0fb506823f7ef2ba3f8d61687d9776b80b9ea15c&v=4" alt="IronDC" width="200" height="200">
+<img src="https://stepifyih.herokuapp.com/images/stepify.png" alt="IronDC" width="200" height="200">
 
 # What is this
 
