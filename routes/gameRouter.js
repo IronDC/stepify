@@ -237,10 +237,16 @@ router.post(
   ensureLogin.ensureLoggedIn(),
   async (req, res, next) => {
     try {
+      console.log(`Request body ${req.body} and request params ${req.params}`);
+      const { ...body } = req.body;
+      for (const obj in body) {
+        console.log(obj);
+      }
       const artist = await Artist.find();
       const selectRandom = array =>
         array[Math.floor(Math.random() * array.length)];
       let finalArtist = selectRandom(artist);
+      console.log(`this is the finalartist refresh ${finalArtist}`);
       return res.json(finalArtist);
     } catch (err) {
       res.send(`Error refresh POST: ${err}`);
