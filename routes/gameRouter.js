@@ -36,12 +36,16 @@ router.get("/start", ensureLogin.ensureLoggedIn(), async (req, res, next) => {
 
 // Post de la primera página con relacionados
 router.post(
-  "/rel-page/:initArtist&:finalArtist",
+  "/rel-page/:initArtist",
   ensureLogin.ensureLoggedIn(),
   async (req, res, next) => {
     try {
       console.log("POST DE LA PRIMERA PAGINA DE RELACIONADOS");
-      const { initArtist, finalArtist } = req.params;
+      console.log(req.params);
+      const { initArtist } = req.params;
+      console.log(req.body);
+      const { finalArtist } = req.body;
+      console.log(`esto es el finalArtist desde body: ${finalArtist}`);
 
       const initialArtist = await Artist.findOne({ idSpotify: initArtist });
       let initSpoti;

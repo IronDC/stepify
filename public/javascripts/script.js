@@ -14,14 +14,12 @@ function updateChange(obj) {
   const name = obj.data.name;
   const updateImage = document.getElementById("finalArtist-image");
   const updateName = document.getElementById("finalArtist-name");
-  const form = document.getElementById("form");
-  const updateForm = form.getAttribute("action");
-  // const updateIdSpotify = document.getElementById("finalArtist-idSpotify");
-  // updateImage.getElementById("finalArtist-image") = image;
+  const updateIdSpotify = document.getElementById("finalArtist-idSpotify");
   updateImage.setAttribute("src", `${image}`);
   updateName.innerText = name;
-  //updateIdSpotify.innerText = idSpotify;
-  //updateIdSpotify.setAttribute("finalArtist-idSpotify", `${idSpotify}`);
+  updateIdSpotify.setAttribute("placeholder", `${idSpotify}`);
+  console.log(image);
+  console.log(idSpotify);
 }
 
 refresh.addEventListener("click", function() {
