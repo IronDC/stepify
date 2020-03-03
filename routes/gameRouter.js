@@ -36,13 +36,15 @@ router.get("/start", ensureLogin.ensureLoggedIn(), async (req, res, next) => {
 
 // Post de la primera página con relacionados
 router.post(
-  "/rel-page/:initArtist&:finalArtist",
+  "/rel-page/:initArtist",
   ensureLogin.ensureLoggedIn(),
   async (req, res, next) => {
     try {
       console.log("POST DE LA PRIMERA PAGINA DE RELACIONADOS");
-      const { initArtist, finalArtist } = req.params;
-
+      console.log(`esteo es req.params ${req.params}`);
+      const { initArtist } = req.params;
+      console.log(`esto es undefined: ${req.body}`);
+      const { finalArtist } = req.body;
       const initialArtist = await Artist.findOne({ idSpotify: initArtist });
       let initSpoti;
       let initName;
@@ -237,11 +239,11 @@ router.post(
   ensureLogin.ensureLoggedIn(),
   async (req, res, next) => {
     try {
-      console.log(`Request body ${req.body} and request params ${req.params}`);
-      const { ...body } = req.body;
-      for (const obj in body) {
-        console.log(obj);
-      }
+      // console.log(`Request body ${req.body} and request params ${req.params}`);
+      // const { ...body } = req.body;
+      // for (const obj in body) {
+      //   console.log(obj);
+      // }
       const artist = await Artist.find();
       const selectRandom = array =>
         array[Math.floor(Math.random() * array.length)];
