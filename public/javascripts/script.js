@@ -14,12 +14,13 @@ function updateChange(obj) {
   const idSpotify = obj.data.idSpotify;
   const updateImage = document.getElementById("finalArtist-image");
   const updateName = document.getElementById("finalArtist-name");
-  const updateIdSpotify = document.getElementById("finalArtist-idSpotify");
+  const form = document.getElementById("form");
+  let updateForm = form.getAttribute("action");
+  let url = updateForm.split("&")[0];
+  let updateUrl = url + "&" + idSpotify;
   updateImage.setAttribute("src", `${image}`);
   updateName.innerText = name;
-  updateIdSpotify.setAttribute("placeholder", `${idSpotify}`);
-  console.log(image);
-  console.log(idSpotify);
+  form.setAttribute("action", updateUrl);
 }
 
 refresh.addEventListener("click", function() {
