@@ -41,10 +41,12 @@ router.post(
   async (req, res, next) => {
     try {
       console.log("POST DE LA PRIMERA PAGINA DE RELACIONADOS");
-      console.log(`esteo es req.params ${req.params}`);
+      console.log(req.params);
       const { initArtist } = req.params;
-      console.log(`esto es undefined: ${req.body}`);
+      console.log(req.body);
       const { finalArtist } = req.body;
+      console.log(`esto es el finalArtist desde body: ${finalArtist}`);
+
       const initialArtist = await Artist.findOne({ idSpotify: initArtist });
       let initSpoti;
       let initName;

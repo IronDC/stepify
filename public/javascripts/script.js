@@ -18,6 +18,8 @@ function updateChange(obj) {
   updateImage.setAttribute("src", `${image}`);
   updateName.innerText = name;
   updateIdSpotify.setAttribute("placeholder", `${idSpotify}`);
+  console.log(image);
+  console.log(idSpotify);
 }
 
 refresh.addEventListener("click", function() {

@@ -13,7 +13,7 @@
       <h1>HERE ARE YOUR INITIAL AND FINAL ARTIST</h1>
       <p class="spotiText">How many steps do you need?</p>
       <form id="form" action="/rel-page/{{initialArtist.idSpotify}}" method="POST">
-        <input id="finalArtist-idSpotify" name="item" placeholder="{{finalArtist.idSpotify}}" width="400px" />
+        <input name="{{finalArtist.idSpotify}}" id="finalArtist-idSpotify" placeholder="{{finalArtist.idSpotify}}" />
         <button type="submit" class="btn btn-outline-success btn-lg" alt="Push to start">START
           GAME</button>
       </form>
@@ -21,7 +21,6 @@
     <div class="col" align="center">
       <div class="card" style="width: 15rem;" id="refresh-pls">
         <p class="card-title">Final</p>
-        <div style="display:none" id="finalArtist-idSpotify">{{finalArtist.idSpotify}}</div>
         <img src="{{finalArtist.image}}" id="finalArtist-image" class="card-img-top" alt="{{finalArtist.image}}">
         <div class="card-body">
           <h5 id="finalArtist-name" class="card-title">{{finalArtist.name}}</h5>
