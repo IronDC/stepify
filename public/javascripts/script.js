@@ -1,17 +1,28 @@
-document.addEventListener(
-  "DOMContentLoaded",
-  () => {
-    console.log("Stepify");
-  },
-  false
-);
+const refresh = document.getElementById("refresh-fin");
 
-// function refresh() {
-//   let e = name;
+function change() {
+  const item = event.target.name;
+  axios
+    .post(`/start/refresh`, { item })
+    .then(response => updateChange(response))
+    .catch(error => console.log(`Error ${error}`));
+}
 
-//   axios.post("/start/refresh", e).then(changeCards());
-// }
+function updateChange(obj) {
+  const image = obj.data.image;
+  const name = obj.data.name;
+  const idSpotify = obj.data.idSpotify;
+  const updateImage = document.getElementById("finalArtist-image");
+  const updateName = document.getElementById("finalArtist-name");
+  const form = document.getElementById("form");
+  let updateForm = form.getAttribute("action");
+  let url = updateForm.split("&")[0];
+  let updateUrl = url + "&" + idSpotify;
+  updateImage.setAttribute("src", `${image}`);
+  updateName.innerText = name;
+  form.setAttribute("action", updateUrl);
+}
 
-// function changeCards() {
-//   // Recibimos el objeto con el nuevo finalArtist y cambiamos la card con manipulación del DOM
-// }
+refresh.addEventListener("click", function() {
+  change();
+});

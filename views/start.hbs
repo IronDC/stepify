@@ -1,4 +1,3 @@
-{{!-- {{#each initialArtist}} --}}
 <div class="container-fluid">
   <div class="row">
     <div class="col" align="center">
@@ -13,7 +12,7 @@
     <div class="col-6" align="center">
       <h1>HERE ARE YOUR INITIAL AND FINAL ARTIST</h1>
       <p class="spotiText">How many steps do you need?</p>
-      <form action="/rel-page/{{initialArtist.idSpotify}}&{{finalArtist.idSpotify}}" method="POST">
+      <form id="form" action="/rel-page/{{initialArtist.idSpotify}}&{{finalArtist.idSpotify}}" method="POST">
         <button type="submit" class="btn btn-outline-success btn-lg" alt="Push to start">START
           GAME</button>
       </form>
@@ -21,13 +20,13 @@
     <div class="col" align="center">
       <div class="card" style="width: 15rem;" id="refresh-pls">
         <p class="card-title">Final</p>
-        <img src="{{finalArtist.image}}" class="card-img-top" alt="{{finalArtist.image}}">
+        <img src="{{finalArtist.image}}" id="finalArtist-image" class="card-img-top" alt="{{finalArtist.image}}">
         <div class="card-body">
-          <h5 class="card-title">{{finalArtist.name}}</h5>
-          {{!-- <button type="submit" class="btn btn-outline-light btn-sm" alt="Push to start">Refresh</button> --}}
+          <h5 id="finalArtist-name" class="card-title">{{finalArtist.name}}</h5>
+          <button type="submit" id="refresh-fin" onclick="change()" name="{{finalArtist}}" class=" btn btn-outline-light
+            btn-sm" alt="Push to start">Refresh</button>
         </div>
       </div>
     </div>
   </div>
 </div>
-{{!-- {{/each}} --}}
